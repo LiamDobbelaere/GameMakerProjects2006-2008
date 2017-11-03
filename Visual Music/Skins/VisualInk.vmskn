@@ -1,0 +1,410 @@
+
+//exit;
+//VisualInk Skin - Sleek design
+//by Agustin J Rodriguez 2008 / ··SIN··
+
+var color; color = c_white;
+var xx; xx = 616;
+var yy; yy = 520;
+var dx; dx = 16;
+var alpha; alpha = 1;
+var dpth; dpth = -200;
+var gif; gif = "VisualInk\vfeq.gif";
+var blendmode; blendmode = bm_normal;
+
+EQ1(
+xx, 
+yy, 
+gif, 
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ2(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ3(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ4(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ5(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ6(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ7(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ8(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ9(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ10(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ11(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+
+//volume indicator
+color = c_white;
+xx = 510;
+yy = 522;
+dx = 16;
+alpha = 1;
+dpth = -200;
+gif = "VisualInk\vvol.gif";
+blendmode = bm_normal;
+
+LeftVol(
+xx, 
+yy, 
+gif, 
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+RightVol(
+xx, 
+yy, 
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+
+//menu
+Menu(
+472,
+509,
+"VisualInk\vmenu.gif",
+1, 
+c_white,
+-300,
+bm_normal 
+  ,
+)
+
+//track player controls
+color = c_white;
+xx = 16;
+yy = 540;
+dx = 48;
+alpha = 1;
+dpth = -200;
+blendmode = bm_normal;
+
+Back(
+77,
+551,
+"VisualInk\vback.gif",
+alpha,
+color,
+dpth,
+blendmode,
+"VisualInk\vbackmask.gif"
+)
+
+xx+=dx
+
+Rew(
+108,
+551,
+"VisualInk\vrew.gif",
+alpha,
+color,
+dpth,
+blendmode,
+"VisualInk\vbackmask.gif"
+)
+
+xx+=dx
+
+Stop(
+38,
+551,
+"VisualInk\vstop.gif",
+alpha,
+color,
+dpth,
+blendmode,
+)
+
+xx+=dx
+
+Play(
+131,
+537,
+"VisualInk\vplay.png",
+alpha,
+color,
+dpth,
+blendmode,
+)
+
+xx+=dx
+
+Forw(
+184,
+551,
+"VisualInk\vforw.gif",
+alpha,
+color,
+dpth,
+blendmode,
+"VisualInk\vnextmask.gif"
+)
+
+xx+=dx
+
+Next(
+215,
+551,
+"VisualInk\vnext.gif",
+alpha,
+color,
+dpth,
+blendmode,
+"VisualInk\vnextmask.gif"
+)
+
+Pause(
+"VisualInk\vpause.png",
+"VisualInk\vpausemask.gif"
+)
+
+VolTrack(
+8,
+8,
+"VisualInk\vvoltrack.gif",
+1,
+c_white,
+-400,
+bm_normal,
+)
+
+PosTrack(
+8, //hot spot on sprite
+8, //hot spot on sprite
+"VisualInk\vpostrack.gif",
+1,
+c_white,
+-400, //-400, over the buttons
+bm_normal,
+//"mask.gif"
+)
+
+VolBase(
+520,
+522+36,
+"VisualInk\vvolbase.gif",
+1,
+c_white,
+-300,
+bm_normal,
+"VisualInk\vfvolbasemask.gif",
+8,
+36,
+1
+)
+
+PosBase(
+16+136,
+530,
+"VisualInk\vposbase.gif",
+1,
+c_white,
+-300,
+bm_normal,
+"VisualInk\vposbasemask.gif",
+136,
+16,
+0
+)
+
+Panel(
+0,
+509,
+"VisualInk\vPanel.png",
+1,
+c_white,
+-100,
+bm_normal,
+)
+
+
+
+TrackTime(
+299,
+530,
+fa_left,
+fa_middle,
+1, // alpha
+$888888,
+-500,
+bm_normal,
+)
+
+TrackDetails(
+28,
+579,
+fa_left,
+fa_top,
+1,
+$666666,
+-500,
+bm_normal,
+)
+
+List(
+32,
+32,
+256,
+512-32,
+-50,
+)
+
+//Viualisation port
+Port(
+0,
+0,
+800,
+512,
+0,
+)
+
+//FMOD
+Logo(
+576,
+556,
+1,
+-150,
+)
+
+
+Msg(
+"VisualInk\vmsgbox.png", //back image
+"VisualInk\vmsgbt.png", //button image (3 sub images)
+c_white, //text color
+c_white, //buttontext color
+c_white, //button hi color
+c_navy, //input text color
+c_aqua, //input text back color
+.8 //alpha
+)
+
+//the list colors
+ListColors(
+merge_color(merge_color(c_blue,c_white,.75),c_black,.25), //listnormal 
+c_navy, //outlinecolor
+c_yellow, //listdetails 
+c_red, //listerror 
+
+merge_color(c_lime,c_fuchsia,.75), //hovercolor 
+merge_color(c_blue,c_aqua,.5), //selectcolor 
+merge_color(c_blue,c_lime,.75), //playingcolor 
+c_aqua //movingcolor 
+);

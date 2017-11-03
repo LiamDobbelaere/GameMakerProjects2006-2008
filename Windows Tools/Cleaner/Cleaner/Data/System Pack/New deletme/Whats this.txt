@@ -1,0 +1,5 @@
+This is a new deleteme file.
+Copy and paste it to System Pack. 
+Then you can run cleaner.exe again, and delete it back.
+If you used reset, then don't delete the deleteme file.
+It keeps 109 kB , because the clear files are stored in the new deleteme file too.

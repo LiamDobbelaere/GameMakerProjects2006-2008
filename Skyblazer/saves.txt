@@ -1,0 +1,11 @@
+Savegames:
+df4
+df5
+d1f
+d2f
+d3f
+getsavesound:
+testing....
+Error: IPX Soc not connected
+writing to error log...
+used 3D card.

@@ -1,0 +1,441 @@
+//Default Skin
+//By DarkFlame
+
+//declare vars for easy change of position and look
+
+var color; color = c_blue;
+var xx; xx = 616;
+var yy; yy = 520;
+var dx; dx = 16;
+var alpha; alpha = 1;
+var dpth; dpth = -200;
+var gif; gif = "default\defeq.gif";
+var blendmode; blendmode = bm_normal;
+
+EQ1(
+xx, //x pos
+yy, //y pos
+gif, //gif
+alpha, //alpha >0 to 1 (optional)
+color, //color >0 to c_white (optional c_red, c_lime,... or a $RRGGBB)
+dpth,  //dpth (optional) -200 is good for EQ
+blendmode //Optional (bm_add, bm_subtract, bm_normal)
+)
+
+xx+=dx;
+
+EQ2(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ3(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ4(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ5(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ6(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ7(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ8(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ9(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ10(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+xx+=dx;
+
+EQ11(
+xx,
+yy,
+gif,
+alpha,
+color,
+dpth,
+blendmode
+)
+
+
+//Now the volume indicator position ans setings
+color = c_blue;
+xx = 511;
+yy = 522;
+dx = 14;
+alpha = 1;
+dpth = -200;
+gif = "default\defvol.gif";
+blendmode = bm_normal;
+
+LeftVol(
+xx, //x pos
+yy, //y pos
+gif, //gif
+alpha, //alpha >0 to 1 (optional)
+color, //color >0 to c_white (optional c_red, c_lime,... or a $RRGGBB)
+dpth,  //dpth (optional) -200 is good for Volume Display
+blendmode //Optional (bm_add, bm_subtract, bm_normal)
+)
+
+xx+=dx;
+
+RightVol(
+xx, //x pos
+yy, //y pos
+gif, //gif
+alpha, //alpha >0 to 1 (optional)
+color, //color >0 to c_white (optional c_red, c_lime,... or a $RRGGBB)
+dpth,  //dpth (optional) -200 is good for Volume Display
+blendmode //Optional (bm_add, bm_subtract, bm_normal)
+)
+
+
+//The menu, no variables needed this time
+Menu(
+472, //x pos
+514, //y pos
+"Default\defmenu.gif", //gif
+1, //alpha >0 to 1 (optional)
+c_white, //color >0 to c_white (optional c_red, c_lime,... or a $RRGGBB)
+-300,  //dpth (optional) -300 is good for Buttons
+bm_normal //Optional (bm_add, bm_subtract, bm_normal)
+//, //don't forget the comma id using a mask
+//"Default\defmenumask.gif" //(Optional) the mask used byy the mouse if the displayy image has tranparent gaps that make it hard to click
+)
+
+
+
+//Now the track player controls position ans setings
+color = c_white; //no blending any color
+xx = 16;
+yy = 540;
+dx = 48;
+alpha = 1;
+dpth = -200;
+blendmode = bm_normal;
+
+Back(
+xx, //x pos
+yy, //y pos
+"default\defback.gif", //gif
+alpha, //alpha >0 to 1 (optional)
+color, //color >0 to c_white (optional c_red, c_lime,... or a $RRGGBB)
+dpth,  //dpth (optional) -200 is good for Volume Display
+blendmode, //Optional (bm_add, bm_subtract, bm_normal)
+"default\defbackmask.gif"
+)
+
+xx+=dx
+
+Rew(
+xx, //x pos
+yy, //y pos
+"default\defrew.gif", //gif
+alpha, //alpha >0 to 1 (optional)
+color, //color >0 to c_white (optional c_red, c_lime,... or a $RRGGBB)
+dpth,  //dpth (optional) -200 is good for Volume Display
+blendmode, //Optional (bm_add, bm_subtract, bm_normal)
+"default\defbackmask.gif"
+)
+
+xx+=dx
+
+Stop(
+xx, //x pos
+yy, //y pos
+"default\defstop.gif", //gif
+alpha, //alpha >0 to 1 (optional)
+color, //color >0 to c_white (optional c_red, c_lime,... or a $RRGGBB)
+dpth,  //dpth (optional) -200 is good for Volume Display
+blendmode //Optional (bm_add, bm_subtract, bm_normal)
+//there is also a mask you could use
+)
+
+xx+=dx
+
+Play(
+xx, //x pos
+yy, //y pos
+"default\defplay.gif", //gif
+alpha, //alpha >0 to 1 (optional)
+color, //color >0 to c_white (optional c_red, c_lime,... or a $RRGGBB)
+dpth,  //dpth (optional) -200 is good for Volume Display
+blendmode //Optional (bm_add, bm_subtract, bm_normal)
+//there is also a mask you could use
+)
+
+xx+=dx
+
+Forw(
+xx, //x pos
+yy, //y pos
+"default\defforw.gif", //gif
+alpha, //alpha >0 to 1 (optional)
+color, //color >0 to c_white (optional c_red, c_lime,... or a $RRGGBB)
+dpth,  //dpth (optional) -200 is good for Volume Display
+blendmode, //Optional (bm_add, bm_subtract, bm_normal)
+"default\defnextmask.gif"
+)
+
+xx+=dx
+
+Next(
+xx, //x pos
+yy, //y pos
+"default\defnext.gif", //gif
+alpha, //alpha >0 to 1 (optional)
+color, //color >0 to c_white (optional c_red, c_lime,... or a $RRGGBB)
+dpth,  //dpth (optional) -200 is good for Volume Display
+blendmode, //Optional (bm_add, bm_subtract, bm_normal)
+"default\defnextmask.gif"
+)
+
+//The pause is different, only the gif and the mask are needed
+//it goes on the play button and uses the same settings
+Pause(
+"default\defpause.gif", //gif
+//there is also a mask you could use
+"default\defpausemask.gif" //optional but theure is a gap in the middle so this fixes it
+)
+
+//The volume and position trackers hav the same arguments as a button
+//but the firs 2 are the origins of the sprite, The hot spot
+//that is used to point/position exactly on the scroll bar
+VolTrack(
+8, //hot spot on sprite
+8, //hot spot on sprite
+"default\defvoltrack.gif",
+1,
+c_white,
+-400, //-400, over the buttons
+bm_normal,
+//"mask.gif" //Optional mask, uses same hot spot position
+)
+
+PosTrack(
+8, //hot spot on sprite
+8, //hot spot on sprite
+"default\defpostrack.gif",
+1,
+c_white,
+-400, //-400, over the buttons
+bm_normal,
+//"mask.gif" //Optional mask, uses same hot spot position
+)
+
+//Volume and Position base are the same as buttons BUT
+//3 more parameters are needed
+//The x and y position/hot spot, where the tracker will be placed
+// or centered on.
+//They are in fact the origins of the sprite, usualy centered in the 
+//middle of the track base, so that affects the x,y position of the image
+//That is, the position is no longer relative to the left,top corner of the image
+//The last parameter is the type of scroll. 
+// 0 is left to right, 1 it from bottom to top
+
+
+VolBase(
+520, //The position, taking into account the hot spot
+522+36, //ditto
+"default\defvolbase.gif",
+1,
+c_white,
+-300,
+bm_normal,
+"default\defvolbasemask.gif",
+8, //This matters for bottom up track
+36, //this does not... centered nevertheless
+1
+)
+
+
+PosBase(
+16+136, //The position, taking into account the hot spot
+530, //ditto
+"default\defposbase.gif",
+1,
+c_white,
+-300,
+bm_normal,
+"default\defposbasemask.gif",
+136, //This does not matters for left to right tracking
+16, //this does.
+0
+)
+
+//You can have as many panels as you want. Default has only 1
+Panel(
+0, //x pos
+512, //y pos
+"default\defpanel.png", //gif
+1, //alpha >0 to 1 (optional)
+c_white, //color >0 to c_white (optional c_red, c_lime,... or a $RRGGBB)
+-100,  //dpth (optional) -100 is good for panels
+bm_normal //Optional (bm_add, bm_subtract, bm_normal)
+)
+
+//Track time and details 
+
+TrackTime(
+296,
+530,
+fa_left, //halign fa_left, fa_right, fa_center
+fa_middle, //valign fa_top, fa_bottom, fa_middle
+1, // alpha
+c_dkgray,
+-500, //-500 is the depth for text
+bm_add,
+)
+
+//Track time and details 
+
+TrackDetails(
+16,
+576,
+fa_left, //halign fa_left, fa_right, fa_center
+fa_top, //valign fa_top, fa_bottom, fa_middle
+1, // alpha
+c_dkgray,
+-500, //-500 is the depth for text
+bm_add,
+)
+
+
+//Play list, where it's located and it's dimention
+
+List(
+32, //left
+32, //top
+256, //right
+504, //bottom
+-50 //depth, -50 (below panels)
+)
+
+
+//Ditto for visualisation port
+Port(
+0, //left
+0, //top
+800, //right
+512, //bottom
+0 //depth (0- under everything)
+)
+
+//FMOD Logo
+Logo(
+576, //x
+556, //y
+1,   //alpha
+-150 //depth
+)
+
+//The specs for the message boxes and input boxes
+Msg(
+"default\msgback.png", //back image
+"default\msgbuts.bmp", //button image (3 sub images)
+c_white, //text color
+c_white, //buttontext color
+c_white, //button hi color
+c_white, //input text color
+c_dkgray, //input text back color
+.8 //alpha
+)
+
+//the list colors
+ListColors(
+c_lime, //listnormal 
+c_maroon, //outlinecolor
+c_yellow, //listdetails 
+c_red, //listerror 
+
+c_blue, //hovercolor 
+c_fuchsia, //selectcolor 
+c_purple, //playingcolor 
+c_aqua //movingcolor 
+);

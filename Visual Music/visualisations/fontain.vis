@@ -1,0 +1,19 @@
+CommandListAdd (SetDataColors,c_red, c_red, c_red, c_red);
+CommandListAdd (SetLeftSpectrumColorSwitch, 5, c_blue, c_dkgray, c_aqua, c_navy, c_lime);
+CommandListAdd (SetRightSpectrumColorSwitch, 5, c_aqua, c_navy, c_dkgray, c_lime, c_blue);
+CommandListAdd (SetDataAlphas,.2, .2, .2, .2);
+CommandListAdd (MakeSurf0,512,512,c_black);
+CommandListAdd (DrawOnSurf0);
+CommandListAdd (DrawSurface0,0,0,512,512,-8,0,520,516,c_white,1);
+CommandListAdd (TransformStart);
+CommandListAdd (TransformSetXY,256,128*3);
+CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawLeftSpectrumWithSettings, 0, 0, -256,-200)
+CommandListAdd (DrawRightSpectrumWithSettings,  0, 0, 256,-200)
+CommandListAdd (DrawLeftSpectrumWithSettings, 0, 0, 256,-210)
+CommandListAdd (DrawRightSpectrumWithSettings,  0, 0, -256,-210)
+CommandListAdd (TransformEnd);
+CommandListAdd (SetBlendNormal);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,c_black,.01);
+CommandListAdd (DrawOnScreen);
+CommandListAdd (DrawSurface0,0,0,512,512,0,0,800,512,c_white,1);

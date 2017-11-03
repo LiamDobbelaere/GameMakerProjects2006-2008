@@ -1,0 +1,79 @@
+//set colors
+CommandListAdd (SetDataColors,c_red, c_red, c_red, c_red);
+//set color rotation
+CommandListAdd (SetLeftSpectrumColorSwitch, 7, c_blue, c_maroon, c_dkgray, c_aqua, c_navy, c_lime, c_red);
+CommandListAdd (SetRightSpectrumColorSwitch, 6, c_aqua, c_navy, c_lime, c_dkgray, c_red, c_blue);
+//set alpha
+CommandListAdd (SetDataAlphas,1, 1, 1, 1);
+//make the surface
+CommandListAdd (MakeSurf0,512,512,c_black);
+//redirect to it
+CommandListAdd (DrawOnSurf0);
+
+//for proper turning, we need another surface
+//this one holds the image as in the grow example
+//surface 0 will hold the turned result
+CommandListAdd (MakeSurf1,512,512,c_black);
+CommandListAdd (DrawOnSurf1);
+
+//Drawing lines on surface
+
+//transform start, will draw from center of surface
+CommandListAdd (TransformStart);
+//rotate (initial angle, rot speed)
+CommandListAdd (TransformRotate,0,3);
+//set to center
+CommandListAdd (TransformSetXY,256,256);
+
+//Draw a circle around radi 64 
+//draw from edge spectrum values towards outside 128
+CommandListAdd (DrawLeftSpectrumArc,  0, 0,  64, 128, 0,90)
+//again
+CommandListAdd (DrawLeftSpectrumArc,  0, 0,  64, 128, 0,-90)
+//now for the right
+CommandListAdd (DrawRightSpectrumArc,  0, 0,  64, 128, 180,90)
+CommandListAdd (DrawRightSpectrumArc,  0, 0,  64, 128, 180,270)
+
+//done with rotation
+CommandListAdd (TransformEnd);
+
+//fade
+CommandListAdd (SetBlendSubtract);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,make_color_rgb(5,5,5),1);
+CommandListAdd (SetBlendNormal);
+
+//this cancels any alpha transfered to the surface
+CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,c_black,1);
+CommandListAdd (SetBlendNormal);
+
+//Draw the surface onto itself copy area onto larger one for grow effect
+CommandListAdd (DrawSurface1,0,0,512,512,-2,-2,514,514,c_white,1);
+
+//turn
+//set to surface 0
+CommandListAdd (DrawOnSurf0);
+//start transform
+CommandListAdd (TransformStart);
+//set the rotation, twisting to surface as a cumulative effect over time it's pretty freaky
+CommandListAdd (TransformRotate,0,-1);
+//move to center of surface
+CommandListAdd (TransformSetXY,256,256);
+//copy and past... Note the destination is now relative to the transform
+//also,note I also grow by 2 here and by 2 below to have a better, less edgy draw
+//copy and turn image onto surf0
+//Also note I copy at alpha .1 to merge with the last image so you dont see the square edge
+CommandListAdd (DrawSurface1,0,0,512,512,-257,-257,257,257,c_white,.1);
+//end transform
+CommandListAdd (TransformEnd);
+
+
+//this cancels any alpha transfered to the surface
+CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,c_black,1);
+CommandListAdd (SetBlendNormal);
+
+
+//draw on screen
+CommandListAdd (DrawOnScreen);
+CommandListAdd (DrawSurface0,0,0,512,512,0,0,800,512,c_white,1);

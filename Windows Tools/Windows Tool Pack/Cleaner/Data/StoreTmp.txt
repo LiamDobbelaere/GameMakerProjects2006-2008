@@ -1,0 +1,40 @@
+//A little code, so the .tmp files won't appear on your desktop
+TMPL
+PC_desktop=PDESK
+//Look into the Pc's desktop
+PDESK
+if
+.TMP
+file allowed
+then
+set file .tmp not allowed
+then
+if not allowed
+then add .tmp to .../Data/System Pack/DELETEME.CFG
+then
+rpeat:
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+deltemp
+then if not all .tmp deleted
+goto rpeat:
+else
+Done is visible
+
+

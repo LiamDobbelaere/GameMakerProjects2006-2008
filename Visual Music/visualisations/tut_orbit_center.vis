@@ -1,0 +1,138 @@
+//set colors
+CommandListAdd (SetDataColors,c_red, c_red, c_red, c_red);
+//set color rotation
+CommandListAdd (SetLeftSpectrumColorSwitch, 5, c_blue, c_maroon, c_dkgray, c_aqua, c_navy, c_lime, c_red);
+CommandListAdd (SetRightSpectrumColorSwitch, 5, c_aqua, c_navy, c_lime, c_dkgray, c_red, c_blue);
+//set alpha
+CommandListAdd (SetDataAlphas,.6, .6, 1, 1);
+//make the surface
+CommandListAdd (MakeSurf0,512,512,c_black);
+//redirect to it
+CommandListAdd (DrawOnSurf0);
+
+//Set to add blend
+CommandListAdd (SetBlendAdd);
+
+
+//Draw a circle at each corner of the surface
+//roating around the center
+
+//I could have used multiple surfaces for this (faster)
+
+
+//transform start
+CommandListAdd (TransformStart);
+//rotate (initial angle, rot speed)
+CommandListAdd (TransformRotate,-45,-1);
+//set to lower right quadrant
+CommandListAdd (TransformSetXY,128,128);
+//orbit around axis
+CommandListAdd (TransformRotate,0,-1);
+//offset orbit origins to center of screen;
+CommandListAdd (TransformSetXY,256,256);
+
+//Draw a circle around the surface diameter
+//draw from edge spectrum values towards center
+CommandListAdd (DrawLeftSpectrumArc,  0, 0,  64, 128, 0,180)
+//again
+CommandListAdd (DrawLeftSpectrumArc,  0, 0,  64, 128, 0,-180)
+
+//done with transform
+CommandListAdd (TransformEnd);
+
+
+
+
+
+//transform start
+CommandListAdd (TransformStart);
+//rotate (initial angle, rot speed)
+CommandListAdd (TransformRotate,135,-1);
+//set to upper left quadrant
+CommandListAdd (TransformSetXY,-128,-128);
+//orbit around axis
+CommandListAdd (TransformRotate,0,-1);
+//offset orbit origins to center of screen;
+CommandListAdd (TransformSetXY,256,256);
+
+//Draw a circle around the surface diameter
+//draw from edge spectrum values towards center
+CommandListAdd (DrawLeftSpectrumArc,  0, 0,  64, 128, 0,180)
+//again
+CommandListAdd (DrawLeftSpectrumArc,  0, 0,  64, 128, 0,-180)
+
+//done with transform
+CommandListAdd (TransformEnd);
+
+
+
+
+
+//transform start
+CommandListAdd (TransformStart);
+//rotate (initial angle, rot speed)
+CommandListAdd (TransformRotate,180+45,1);
+//set to lower left quadrant
+CommandListAdd (TransformSetXY,-128,128);
+//orbit around axis
+CommandListAdd (TransformRotate,0,1.234);
+//offset orbit origins to center of screen;
+CommandListAdd (TransformSetXY,256,256);
+
+//Draw a circle around the surface diameter
+//draw from edge spectrum values towards center
+CommandListAdd (DrawRightSpectrumArc,  0, 0,  64, 128, 0,180)
+//again
+CommandListAdd (DrawRightSpectrumArc,  0, 0,  64, 128, 0,-180)
+
+//done with transform
+CommandListAdd (TransformEnd);
+
+
+
+
+//transform start
+CommandListAdd (TransformStart);
+//rotate (initial angle, rot speed)
+CommandListAdd (TransformRotate,45,1);
+//set to upper right quadrant
+CommandListAdd (TransformSetXY,128,-128);
+//orbit around axis
+CommandListAdd (TransformRotate,0,1.234);
+//offset orbit origins to center of screen;
+CommandListAdd (TransformSetXY,256,256);
+
+//Draw a circle around the surface diameter
+//draw from edge spectrum values towards center
+CommandListAdd (DrawRightSpectrumArc,  0, 0,  64, 128, 0,180)
+//again
+CommandListAdd (DrawRightSpectrumArc,  0, 0,  64, 128, 0,-180)
+
+//done with transform
+CommandListAdd (TransformEnd);
+
+
+
+//fix the edges
+CommandListAdd (SetBlendNormal);
+CommandListAdd (DrawRectColorAlpha,0,0,512,1,c_black,1);
+CommandListAdd (DrawRectColorAlpha,0,0,1,512,c_black,1);
+CommandListAdd (DrawRectColorAlpha,512,512,0,511,c_black,1);
+CommandListAdd (DrawRectColorAlpha,512,512,511,0,c_black,1);
+
+//fade
+CommandListAdd (SetBlendSubtract);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,make_color_rgb(1,1,1),1);
+CommandListAdd (SetBlendNormal);
+
+//this cancels any alpha transfered to the surface
+CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,c_black,1);
+CommandListAdd (SetBlendNormal);
+
+//Draw the surface onto itself copy bigger area onto smaller one for shrink effect
+CommandListAdd (DrawSurface0,-4,-4,516,516,0,0,512,512,c_white,1);
+
+//draw on screen
+CommandListAdd (DrawOnScreen);
+CommandListAdd (DrawSurface0,0,0,512,512,0,0,800,512,c_white,1);

@@ -1,0 +1,82 @@
+Fire3dFireAlpha = .5;
+Fire3dLineAlpha = .3;
+Fire3dEachFadeAlpha = 1;
+Fire3dMainFadeAlpha = .05;
+
+fire1rspeed = 101.32
+fire2rspeed = -153.45
+fire3rspeed = -135.123
+fire4rspeed = 111.234;
+
+CommandListAdd (SetDataColors,c_red, c_red, c_red, c_red);
+CommandListAdd (SetLeftSpectrumColorSwitch, 3, c_red, c_orange, c_maroon);
+CommandListAdd (SetRightSpectrumColorSwitch, 3, c_orange, c_maroon, c_red);
+CommandListAdd (SetDataAlphas,Fire3dLineAlpha, Fire3dLineAlpha, Fire3dLineAlpha, Fire3dLineAlpha);
+
+
+CommandListAdd (MakeSurf0,512,512,c_black);
+CommandListAdd (MakeSurf1,512,512,c_black);
+CommandListAdd (DrawOnSurf1);
+
+//fade surf 1
+CommandListAdd (SetBlendNormal);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,c_black,Fire3dEachFadeAlpha);
+
+//stretch up
+//CommandListAdd (DrawSurface1,0,0,512,512,0,-16,512,512,c_white,1);
+
+//draw fire lines
+CommandListAdd (TransformStart);
+CommandListAdd (TransformSetXY,256,512);
+CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawLeftSpectrumWithSettings, 0, 0, -256,-120)
+CommandListAdd (DrawRightSpectrumWithSettings,  0, 0, 256,-120)
+CommandListAdd (DrawLeftSpectrumWithSettings, 0, 0, 256,-110)
+CommandListAdd (DrawRightSpectrumWithSettings,  0, 0, -256,-110)
+CommandListAdd (TransformEnd);
+
+//Tranfer to surf 0
+CommandListAdd (DrawOnSurf0)
+
+//fade surf 0
+CommandListAdd (SetBlendNormal);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,c_black,Fire3dMainFadeAlpha);
+
+//stretch up
+CommandListAdd (DrawSurface0,0,0,512,512,0,-16,512,512,c_white,1);
+
+//copy each flames in a circular fashion
+CommandListAdd (SetBlendAdd);
+CommandListAdd (SetPerspective, true,0,0,512,512)
+//transform start
+CommandListAdd (TransformStart);
+CommandListAdd (TransformRotateY,0,fire1rspeed);
+CommandListAdd (TransformSetXY,256,512);
+CommandListAdd (DrawSurface1,0,0,512,512,-256,-512,256,-64,c_white,Fire3dFireAlpha);
+CommandListAdd (TransformEnd);
+
+CommandListAdd (TransformStart);
+CommandListAdd (TransformRotateY,45,fire2rspeed);
+CommandListAdd (TransformSetXY,256,512);
+CommandListAdd (DrawSurface1,0,0,512,512,-256,-512,256,-64,c_white,Fire3dFireAlpha);
+CommandListAdd (TransformEnd);
+
+
+CommandListAdd (TransformStart);
+CommandListAdd (TransformRotateY,90,fire3rspeed);
+CommandListAdd (TransformSetXY,256,512);
+CommandListAdd (DrawSurface1,0,0,512,512,-256,-512,256,-64,c_white,Fire3dFireAlpha);
+CommandListAdd (TransformEnd);
+
+CommandListAdd (TransformStart);
+CommandListAdd (TransformRotateY,135,fire4rspeed);
+CommandListAdd (TransformSetXY,256,512);
+CommandListAdd (DrawSurface1,0,0,512,512,-256,-512,256,-64,c_white,Fire3dFireAlpha);
+CommandListAdd (TransformEnd);
+
+//done with transform
+CommandListAdd (TransformEnd);
+
+CommandListAdd (SetBlendNormal);
+CommandListAdd (DrawOnScreen);
+CommandListAdd (DrawSurface0,0,0,512,512,0,0,800,512,c_white,1);

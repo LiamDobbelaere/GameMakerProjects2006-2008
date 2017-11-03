@@ -1,0 +1,10 @@
+A-set key
+key = pr_key
+pr_key = vk_left , vk_right , vk_up
+S_t_controls
+If !key to pr_key(1);
+If !key to pr_key(2)
+If !key to pr_key(3)
+then
+Done
+load: Gamedata_02 

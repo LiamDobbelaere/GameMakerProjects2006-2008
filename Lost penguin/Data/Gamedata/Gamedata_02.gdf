@@ -1,0 +1,22 @@
+Loadintoexe:
+
+//Settings & Objects
+
+TstoryObjects.lpf
+Game.lpf
+Gameinfo.lpf
+Window.lpf
+Sound.lpf
+Gamesetting.lpf
+Popups.lpf
+Background.lpf
+
+//Levels
+
+Intro.lpl
+Menu.lpl
+Getgem1.lpl
+Getgem2.lpl
+Getgem3.lpl
+Flyzone.lpl
+OnlineLV1.lpl

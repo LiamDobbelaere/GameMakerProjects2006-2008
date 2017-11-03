@@ -1,0 +1,26 @@
+CommandListAdd (SetDataColors,c_red, c_green, c_blue, c_yellow);
+CommandListAdd (SetDataAlphas,80, 50, 80, 95);
+CommandListAdd (SetLeftWaveColorSwitch, 5, c_blue, c_red, c_lime, c_lime,$999999);
+CommandListAdd (SetRightWaveColorSwitch, 1, $000000);
+CommandListAdd (MakeSurf0,550,512,c_yellow);
+CommandListAdd (DrawOnSurf0);
+CommandListAdd (DrawSurface0,2,0,700,300,-5,-400,580,580,c_white,44);
+//CommandListAdd (SetBlendAdd);
+CommandListAdd (TransformStart);
+CommandListAdd (TransformRotate,5,2);
+CommandListAdd (TransformStart);
+CommandListAdd (TransformRotate,0,0);
+CommandListAdd (TransformSetXY,350,200);
+CommandListAdd (DrawLeftWaveWithSettings, -500, -75, 400, 65)
+CommandListAdd (TransformEnd);
+CommandListAdd (TransformStart);
+CommandListAdd (TransformRotate,+5,+10);
+CommandListAdd (TransformSetXY,250,200);
+CommandListAdd (DrawRightWaveWithSettings, -500, -75, 400, 45)
+CommandListAdd (TransformEnd);
+CommandListAdd (TransformEnd);
+//CommandListAdd (SetBlendNormal);
+CommandListAdd (DrawRectColorAlpha,0,0,510,512,c_lime,.010);
+CommandListAdd (DrawOnScreen);
+//CommandListAdd (DrawSurface0,2,0,+200,800,+5,+400,400,512,c_yellow,1);
+CommandListAdd (DrawSurface0,2,0,+200,800,+5,+0,400,512,c_yellow,1);

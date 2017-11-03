@@ -1,0 +1,7 @@
+Sprite: DarkBG
+Solid: true
+Visible: false
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>

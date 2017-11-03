@@ -1,0 +1,15 @@
+D list:
+C_GUI.
+message_background(GUIbg)
+message_button(GUIbut)
+/C_GUI.
+DRESET
+LOAD_FILE
+GAME.LPF
+ADD
+/TEXT1
+/TEXT2
+/TEXT3
+/TEXT4
+/TEXT5
+TO LPF

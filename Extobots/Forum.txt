@@ -1,0 +1,3 @@
+US: tiptodog
+Pass: tiptodog
+Website: www.extobots.yourbb.nl

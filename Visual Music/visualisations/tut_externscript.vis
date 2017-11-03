@@ -1,0 +1,97 @@
+//Add an external script as script1
+var script1; script1 = AddScript("
+
+if(action = 0) //pushed (added to stack)
+{
+    //init vars/create stuff
+    //copy arguments to variables that make sense
+    ww = arg1
+    hh = arg2
+    //up to arg13
+    exit;
+
+}
+else if(action = 1) //poped (removed from stack)
+{
+    //done... free stuff
+    exit
+}
+else if(action = 2) //first do something call
+{
+    //handled below
+}
+else if(action = 3) //subsequent calls
+{
+    //handled below
+}
+
+
+draw_set_color(global.lscolor);
+repeat(200)
+{
+    draw_point(random(ww),random(hh));
+}
+draw_set_color(global.rscolor);
+repeat(200)
+{
+    draw_point(random(ww),random(hh));
+}
+draw_set_color(c_black);
+exit;
+
+");
+
+
+//set colors
+CommandListAdd (SetDataColors,c_red, c_red, c_red, c_red);
+//set color rotation
+CommandListAdd (SetLeftSpectrumColorSwitch, 7, c_blue, c_maroon, c_dkgray, c_aqua, c_navy, c_lime, c_red);
+CommandListAdd (SetRightSpectrumColorSwitch, 6, c_aqua, c_navy, c_lime, c_dkgray, c_red, c_blue);
+//set alpha
+CommandListAdd (SetDataAlphas,.5, .5, 1, 1);
+//make the surface
+CommandListAdd (MakeSurf0,512,512,c_black);
+//redirect to it
+CommandListAdd (DrawOnSurf0);
+
+//Drawing lines on surface
+
+//transform start, will draw from center of surface
+CommandListAdd (TransformStart);
+//rotate (initial angle, rot speed)
+CommandListAdd (TransformRotate,0,-1);
+//set to center
+CommandListAdd (TransformSetXY,256,256);
+
+//Draw a circle around the surface diameter
+//draw from edge spectrum values towards center
+CommandListAdd (DrawLeftSpectrumArc,  0, 0,  254, 156, 0,90)
+//again
+CommandListAdd (DrawLeftSpectrumArc,  0, 0,  254, 156, 0,-90)
+//now for the right
+CommandListAdd (DrawRightSpectrumArc,  0, 0,  254, 156, 180,90)
+CommandListAdd (DrawRightSpectrumArc,  0, 0,  254, 156, 180,270)
+
+//done with rotation
+CommandListAdd (TransformEnd);
+
+//call the external script
+CommandListAdd (ExternalScript,  script1, 512,512)
+
+//fix the edges
+CommandListAdd (DrawRectColorAlpha,0,0,512,1,c_black,1);
+CommandListAdd (DrawRectColorAlpha,0,0,1,512,c_black,1);
+CommandListAdd (DrawRectColorAlpha,512,512,0,511,c_black,1);
+CommandListAdd (DrawRectColorAlpha,512,512,511,0,c_black,1);
+
+//this cancels any alpha transfered to the surface
+CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,c_black,1);
+CommandListAdd (SetBlendNormal);
+
+//Draw the surface onto itself copy bigger area onto smaller one for shrink effect
+CommandListAdd (DrawSurface0,-4,-4,516,516,0,0,512,512,c_white,1);
+
+//draw on screen
+CommandListAdd (DrawOnScreen);
+CommandListAdd (DrawSurface0,0,0,512,512,0,0,800,512,c_white,1);

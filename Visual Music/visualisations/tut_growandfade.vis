@@ -1,0 +1,49 @@
+//set colors
+CommandListAdd (SetDataColors,c_red, c_red, c_red, c_red);
+//set color rotation
+CommandListAdd (SetLeftSpectrumColorSwitch, 5, c_blue, c_maroon, c_dkgray, c_aqua, c_navy, c_lime, c_red);
+CommandListAdd (SetRightSpectrumColorSwitch, 5, c_aqua, c_navy, c_lime, c_dkgray, c_red, c_blue);
+//set alpha
+CommandListAdd (SetDataAlphas,1, 1, 1, 1);
+//make the surface
+CommandListAdd (MakeSurf0,512,512,c_black);
+//redirect to it
+CommandListAdd (DrawOnSurf0);
+
+//Drawing lines on surface
+
+//transform start, will draw from center of surface
+CommandListAdd (TransformStart);
+//rotate (initial angle, rot speed)
+CommandListAdd (TransformRotate,0,-1);
+//set to center
+CommandListAdd (TransformSetXY,256,256);
+
+//Draw a circle around radi 64 
+//draw from edge spectrum values towards outside 128
+CommandListAdd (DrawLeftSpectrumArc,  0, 0,  64, 128, 0,90)
+//again
+CommandListAdd (DrawLeftSpectrumArc,  0, 0,  64, 128, 0,-90)
+//now for the right
+CommandListAdd (DrawRightSpectrumArc,  0, 0,  64, 128, 180,90)
+CommandListAdd (DrawRightSpectrumArc,  0, 0,  64, 128, 180,270)
+
+//done with rotation
+CommandListAdd (TransformEnd);
+
+//fade
+CommandListAdd (SetBlendSubtract);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,make_color_rgb(5,5,5),1);
+CommandListAdd (SetBlendNormal);
+
+//this cancels any alpha transfered to the surface
+CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,c_black,1);
+CommandListAdd (SetBlendNormal);
+
+//Draw the surface onto itself copy area onto larger one for grow effect
+CommandListAdd (DrawSurface0,0,0,512,512,-4,-4,516,516,c_white,1);
+
+//draw on screen
+CommandListAdd (DrawOnScreen);
+CommandListAdd (DrawSurface0,0,0,512,512,0,0,800,512,c_white,1);

@@ -1,0 +1,759 @@
+Information about object: Intro1
+
+Sprite: <no sprite>
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set Alarm 0 to 180
+play sound Theme; looping: true
+
+Alarm Event for alarm 0:
+if next room exists
+      go to next room with transition effect <no effect>
+
+Key Press Event for <Enter> Key:
+go to room Menu with transition effect <no effect>
+______________________________________________________
+
+Information about object: Intro2
+
+Sprite: <no sprite>
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set Alarm 0 to 190
+
+Alarm Event for alarm 0:
+if next room exists
+      go to next room with transition effect <no effect>
+
+Key Press Event for <Enter> Key:
+go to room Menu with transition effect <no effect>
+______________________________________________________
+
+Information about object: bstart
+
+Sprite: bstart
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set variable image_single to 0
+
+Mouse Event for Left Pressed:
+go to room Level1 with transition effect <no effect>
+
+Mouse Event for Mouse Enter:
+set variable image_single to 1
+
+Mouse Event for Mouse Leave:
+set variable image_single to 0
+______________________________________________________
+
+Information about object: blaad
+
+Sprite: blaad
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set variable image_single to 0
+
+Mouse Event for Left Pressed:
+load the game from the file save
+
+Mouse Event for Mouse Enter:
+set variable image_single to 1
+
+Mouse Event for Mouse Leave:
+set variable image_single to 0
+______________________________________________________
+
+Information about object: binfo
+
+Sprite: binfo
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set variable image_single to 0
+
+Mouse Event for Left Pressed:
+show the game info
+
+Mouse Event for Mouse Enter:
+set variable image_single to 1
+
+Mouse Event for Mouse Leave:
+set variable image_single to 0
+______________________________________________________
+
+Information about object: binopties
+
+Sprite: bopties
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set variable image_single to 0
+
+Mouse Event for Left Pressed:
+if next room exists
+      go to next room with transition effect <no effect>
+
+Mouse Event for Mouse Enter:
+set variable image_single to 1
+
+Mouse Event for Mouse Leave:
+set variable image_single to 0
+______________________________________________________
+
+Information about object: bonline
+
+Sprite: bonline
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set variable image_single to 0
+
+Mouse Event for Left Pressed:
+execute code:message_background(msgback)
+message_button(msgbut)
+display message: Code Ontvangen: LOSTPENGUIN3WIN
+go to room Online with transition effect Blend
+
+Mouse Event for Mouse Enter:
+set variable image_single to 1
+
+Mouse Event for Mouse Leave:
+set variable image_single to 0
+______________________________________________________
+
+Information about object: bexit
+
+Sprite: bexit
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set variable image_single to 0
+
+Mouse Event for Left Pressed:
+end the game
+
+Mouse Event for Mouse Enter:
+set variable image_single to 1
+
+Mouse Event for Mouse Leave:
+set variable image_single to 0
+______________________________________________________
+
+Information about object: text_fullscreen
+
+Sprite: Fullscreen
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+______________________________________________________
+
+Information about object: FullscreenOn/off
+
+Sprite: Off
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set variable image_single to 0
+
+Mouse Event for Left Pressed:
+set screen mode to: switch
+set variable image_single relative to +1
+______________________________________________________
+
+Information about object: bback
+
+Sprite: bback
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set variable image_single to 0
+
+Mouse Event for Left Pressed:
+if previous room exists
+      go to previous room with transition effect <no effect>
+
+Mouse Event for Mouse Enter:
+set variable image_single to 1
+
+Mouse Event for Mouse Leave:
+set variable image_single to 0
+______________________________________________________
+
+Information about object: Icebrick
+
+Sprite: icebrick
+Solid: true
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+______________________________________________________
+
+Information about object: penguin
+
+Sprite: penguin_right
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+ Step Event:
+Gravity engine called.
+
+Collision Event with object Icebrick:
+Collision with solid called.
+
+Collision Event with object Movepillar:
+Platform grip called.
+
+Collision Event with object Badbrick:
+load the game from the file save
+else
+      restart the current room with transition effect <no effect>
+
+Collision Event with object Fallbrick:
+Collision with solid called.
+
+Collision Event with object Fallbrick_mask:
+for all Fallbrick: start moving in directions 010000000 with speed set to 0.3
+for other object: destroy the instance
+for all Fallbrick_mask: destroy the instance
+
+Collision Event with object PMS_right:
+if next room exists
+      go to next room with transition effect <no effect>
+
+Collision Event with object PMS_left:
+if next room exists
+      go to next room with transition effect <no effect>
+
+Collision Event with object Flbrick:
+Collision with solid called.
+
+Collision Event with object F-Icebrick:
+Collision with solid called.
+
+Collision Event with object E_right:
+if next room exists
+      go to next room with transition effect <no effect>
+
+Collision Event with object E_left:
+if next room exists
+      go to next room with transition effect <no effect>
+
+Keyboard Event for <no key> Key:
+execute code:image_speed=0
+
+Keyboard Event for <Left> Key:
+Move called.
+set the sprite to penguin_left with subimage -1 and speed 1
+
+Keyboard Event for <Up> Key:
+Jump called.
+
+Keyboard Event for <Right> Key:
+set the sprite to penguin_right with subimage -1 and speed 1
+Move called.
+
+Other Event: Outside Room:
+load the game from the file save
+else
+      restart the current room with transition effect <no effect>
+
+Key Press Event for <Ctrl> Key:
+if next room exists
+      go to next room with transition effect <no effect>
+
+Key Press Event for R-key Key:
+restart the current room with transition effect <no effect>
+______________________________________________________
+
+Information about object: Movepillar
+
+Sprite: icedown
+Solid: true
+Visible: true
+Depth: 999999999
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+start moving in directions 000001000 with speed set to 5
+
+Collision Event with object Icebrick:
+reverse horizontal direction
+______________________________________________________
+
+Information about object: Warning
+
+Sprite: Warning
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+______________________________________________________
+
+Information about object: Badbrick
+
+Sprite: badbrick
+Solid: true
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+start moving in directions 000001000 with speed set to 5
+
+Collision Event with object Icebrick:
+reverse horizontal direction
+
+Collision Event with object Badbrick:
+reverse horizontal direction
+______________________________________________________
+
+Information about object: Nxtlevel
+
+Sprite: icebrick
+Solid: false
+Visible: false
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+play sound Theme; looping: true
+
+Collision Event with object penguin:
+if next room exists
+      go to next room with transition effect <no effect>
+______________________________________________________
+
+Information about object: Lasersnd
+
+Sprite: icebrick
+Solid: false
+Visible: false
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Collision Event with object penguin:
+stop sound Theme
+play sound LaserRun; looping: true
+destroy the instance
+for all Lasersnd: destroy the instance
+______________________________________________________
+
+Information about object: Laser
+
+Sprite: Laser
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+start moving in directions 000001000 with speed set to 3.8
+
+Collision Event with object Icebrick:
+for other object: destroy the instance
+
+Collision Event with object penguin:
+load the game from the file save
+else
+      restart the current room with transition effect <no effect>
+
+Collision Event with object Movepillar:
+for other object: destroy the instance
+
+Collision Event with object Warning:
+for other object: destroy the instance
+
+Collision Event with object Badbrick:
+for other object: destroy the instance
+______________________________________________________
+
+Information about object: Levelname
+
+Sprite: <no sprite>
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set Alarm 0 to 180
+
+Alarm Event for alarm 0:
+if next room exists
+      go to next room with transition effect <no effect>
+______________________________________________________
+
+Information about object: Save
+
+Sprite: save
+Solid: false
+Visible: false
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Collision Event with object penguin:
+save the game in the file save
+destroy the instance
+______________________________________________________
+
+Information about object: Bosssnd
+
+Sprite: icebrick
+Solid: false
+Visible: false
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Collision Event with object penguin:
+stop sound Theme
+play sound Finalfight; looping: true
+destroy the instance
+for all Lasersnd: destroy the instance
+______________________________________________________
+
+Information about object: PMS_ammo
+
+Sprite: Pms_amm
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+start moving in the direction of position (penguin.x,penguin.y) with speed 10
+
+Collision Event with object Icebrick:
+destroy the instance
+
+Collision Event with object penguin:
+restart the current room with transition effect <no effect>
+
+Collision Event with object Movepillar:
+destroy the instance
+
+Collision Event with object F-Icebrick:
+destroy the instance
+______________________________________________________
+
+Information about object: LaserD
+
+Sprite: Laser
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+start moving in directions 000001000 with speed set to 5
+
+Collision Event with object Icebrick:
+for other object: destroy the instance
+
+Collision Event with object penguin:
+load the game from the file save
+else
+      restart the current room with transition effect <no effect>
+
+Collision Event with object Movepillar:
+for other object: destroy the instance
+
+Collision Event with object Warning:
+for other object: destroy the instance
+
+Collision Event with object Badbrick:
+for other object: destroy the instance
+______________________________________________________
+
+Information about object: Fallbrick
+
+Sprite: icebrick
+Solid: true
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+______________________________________________________
+
+Information about object: Fallbrick_mask
+
+Sprite: icebrick
+Solid: false
+Visible: false
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+______________________________________________________
+
+Information about object: PMS_right
+
+Sprite: Pms_right
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set Alarm 0 to 30
+create instance of object PMS_ammo at relative position (46,51)
+
+Alarm Event for alarm 0:
+change the instance into object PMS_left, yes performing events
+
+ Step Event:
+Move called.
+______________________________________________________
+
+Information about object: PMS_left
+
+Sprite: Pms_left
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set Alarm 0 to 30
+create instance of object PMS_ammo at relative position (41,51)
+
+Alarm Event for alarm 0:
+change the instance into object PMS_right, yes performing events
+
+ Step Event:
+Move called.
+______________________________________________________
+
+Information about object: Flbrick_mask
+
+Sprite: icebrick
+Solid: false
+Visible: false
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Collision Event with object penguin:
+start moving in directions 010000000 with speed set to 1
+______________________________________________________
+
+Information about object: Flbrick
+
+Sprite: icebrick
+Solid: true
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Collision Event with object Flbrick_mask:
+start moving in directions 010000000 with speed set to 5
+______________________________________________________
+
+Information about object: Loadscreen
+
+Sprite: <no sprite>
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set Alarm 0 to 500
+execute code:window_set_cursor(cr_hourglass)
+
+Alarm Event for alarm 0:
+execute code:window_set_cursor(cr_default)
+if next room exists
+      go to next room with transition effect <no effect>
+______________________________________________________
+
+Information about object: loadtext
+
+Sprite: loadtext
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+______________________________________________________
+
+Information about object: F-Icebrick
+
+Sprite: Final ice
+Solid: true
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+______________________________________________________
+
+Information about object: E_right
+
+Sprite: E_right
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set Alarm 0 to 30
+create instance of object PMS_ammo at relative position (116,111)
+
+Alarm Event for alarm 0:
+change the instance into object E_left, yes performing events
+
+ Step Event:
+Move called.
+______________________________________________________
+
+Information about object: E_left
+
+Sprite: E_left
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set Alarm 0 to 30
+create instance of object PMS_ammo at relative position (116,111)
+
+Alarm Event for alarm 0:
+change the instance into object E_right, yes performing events
+
+ Step Event:
+Move called.
+______________________________________________________
+
+Information about object: Esc
+
+Sprite: <no sprite>
+Solid: false
+Visible: true
+Depth: 0
+Persistent: true
+Parent: <no parent>
+Mask: <same as sprite>
+
+Key Press Event for <Escape> Key:
+go to room Menu with transition effect <no effect>
+play sound Theme; looping: true
+______________________________________________________
+
+Information about object: Gefeliciteer_CKD
+
+Sprite: <no sprite>
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: <no parent>
+Mask: <same as sprite>
+
+Create Event:
+set Alarm 0 to 125
+
+Alarm Event for alarm 0:
+go to room Intro1 with transition effect <no effect>
+______________________________________________________
+

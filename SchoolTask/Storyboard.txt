@@ -1,0 +1,18 @@
+SchoolTask (c) --- Storyboard
+__________________________
+
+Type: Topdown
+
+Stap 1 - Verhaal:
+Je moet taken vervullen die de leraar/lerares aangeeft.
+Verken de buitenwereld, krijg bonussen, en evolueer in SchoolTask
+
+Stap 2 - Personages:
+Kan je zelf bepalen, je start met blanky, echt blank.
+
+Stap 3 - Verhaal in puntjes:
+-Taken Vervullen
+-Bonussen
+-Evolueren
+-Verken de school(en erbuiten)
+

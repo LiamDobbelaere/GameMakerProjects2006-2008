@@ -1,0 +1,29 @@
+Lost penguin
+
+Ontdek en verken de ijs-wereld van Lost Penguin
+______________________
+Stap in een wereld...
+Een grote wereld...
+Haast oneindig groot...
+En speel volgens het verhaal, en ontsnap naar huis of speel tegen andere
+spelers via online-spelen.
+
+---Systeem benodigheden---
+Intel pentium III en hoger
+100 MB vrije schijfruimte
+DirectX8.1
+Compatibele geluidskaart
+Toetsenbord
+CD/DvD schijf
+
+Voor de volledige Leesmij, Open het spel en druk op de F1 toets
+
+---(c)redits---
+Graphic editor - Tiptodog, penguins by Gage Interactive
+Music - Penguin Chill
+Idea - Miniclip(www.miniclip.com), Jakkie22
+Beta testers - Fix69, Jakkie22 , Corley , Rappybas , Nickienator
+(c) Tiptodog Productions & Gage Interactive
+
+*NON-FIXBARE bug*
+(Online fout is als je een penguin ziet , beweegt hij niet. Het is server lag, je kunt alleen chatten, de andere penguins zijn jou dus ook niet lopen)

@@ -1,0 +1,24 @@
+CommandListAdd (SetDataColors,c_red, c_red, c_red, c_red);
+CommandListAdd (SetLeftSpectrumColorSwitch, 7, c_blue, c_maroon, c_dkgray, c_aqua, c_navy, c_lime, c_red);
+CommandListAdd (SetRightSpectrumColorSwitch, 6, c_aqua, c_navy, c_lime, c_dkgray, c_red, c_blue);
+CommandListAdd (SetDataAlphas,.5, .5, .3, .3);
+CommandListAdd (MakeSurf0,512,512,c_black,true);
+CommandListAdd (DrawOnSurf0);
+CommandListAdd (DrawSurface0,0,0,512,512,0,-1,511,511,c_white,1);
+CommandListAdd (TransformStart);
+CommandListAdd (TransformRotate,10,0);
+CommandListAdd (TransformSetXY,256,128*3);
+
+//CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawLeftSpectrumWithSettings, -128, 30, 128,-200)
+CommandListAdd (DrawRightSpectrumWithSettings,  128, 30, -128,-200)
+CommandListAdd (TransformEnd);
+//CommandListAdd (SetBlendNormal);
+
+//this cancels any alpha transfered to the surface
+CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,c_black,1);
+CommandListAdd (SetBlendNormal);
+
+CommandListAdd (DrawOnScreen);
+CommandListAdd (DrawSurface0,0,0,512,512,0,0,800,512,c_white,1);

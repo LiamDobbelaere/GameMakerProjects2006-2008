@@ -1,0 +1,11 @@
+Browse
+LOGGED TO // http://www.server.com/
+addto
+GAMEDATA_*.gdf
+//settings
+Slid-roo7
+to
+roo - 8
+then
+setown.
+Plr to p_plr

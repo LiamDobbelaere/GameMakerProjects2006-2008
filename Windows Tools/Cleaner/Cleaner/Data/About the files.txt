@@ -1,0 +1,110 @@
+Some info about the files in this map.
+
+Cleaner files(.cl/.cd)
+
+reg.cle:
+Type: .cle(Cleaner file)
+What: Cleans the registery's
+
+drive.cle:
+Type: .cle(Cleaner file)
+What: Cleans the .sys files in your drives
+
+temp.cle:
+Type: .cle(Cleaner file)
+What: Cleans the temporary internet files
+
+clefile.cle:
+Type: .cle(Cleaner file)
+What: Makes the .cle filetype
+
+loadini.cle:
+Type: .cle(Cleaner file)
+What: Loads the .ini files in the Cleaner folder
+
+setscript.cle:
+Type: .cle(Cleaner file)
+What: Sets all the scripts for Cleaner.exe and Resetter.exe
+
+Bar1.cle:
+Type: .cle(Cleaner file)
+What: The first progress bar
+
+Bar2.cle:
+Type: .cle(Cleaner file)
+What: The second progress bar
+
+bar3.cle:
+Type: .cle(Cleaner file)
+What: The third progress bar
+
+DoneBUT.clt:
+Type: .clt(Cleaner timer file)
+What: The done button, sets when ready or not
+
+DoneBUT.cdf:
+Type: .cdf(Cleaner draw file)
+What: Image of the done button
+
+Systemcode.cls:
+Type: .cls(Cleaner system file)
+What: Loads your system code, as seen top-left in cleaner.exe
+
+Text.cls:
+Type: .cls(Cleaner system file)
+What: Loads the font, and draws the info text
+
+Dll's:
+
+Shell64.dll:
+Type: .dll(System file)
+What: An new system shell file, Dont put in system folder please
+
+Cleanme.dll:
+Type: .dll(System file)
+What: You don't have to clean it, it looks for the windows folder
+
+System.dll:
+Type: .dll(System file)
+What: An system file, just looks what pc you have
+
+lreg.dll:
+Type: .dll(System file)
+What: Loads the registry's
+
+ldrive.dll:
+Type: .dll(System file)
+What: Loads the .sys drive files
+
+ltemp.dll:
+Type: .dll(System file)
+What: Loads the temp files
+
+Loadpack.dll:
+Type: .dll(System file)
+What: Loads the pack file in the map, System pack (always empty, only full when cleaner is running)
+
+Whats this.txt:
+Type: .txt(Text file)
+What: Some info about this map
+
+StoreTmp.txt:
+Type: .txt(Text file)
+What: An new code to place .tmp files on desktop to the deleteme file
+
+About the files.txt:
+Type: .txt(Text file)
+What: This file, what you're reading now
+
+RunFiles.exe:
+Type: .exe(Executable file)
+What: Just runs the cleaner and dll files(DONT START!)
+
+
+Thats it.
+Have fun!
+
+
+
+
+

@@ -1,0 +1,21 @@
+020
+001 7full.x
+002 7centralhole.x
+003 7bande2.x
+005 7bandaDXM.x
+006 7bandaSXM.x
+007 7bandaCXM.x
+008 7halfleft.x
+009 7halfright.x
+010 7halfcenter.x
+011 7side.x
+012 12.x
+013 13.x
+014 14.x
+015 15.x
+016 16.x
+017 17.x
+018 18.x
+019 19.x
+020 20.x
+021 21.x

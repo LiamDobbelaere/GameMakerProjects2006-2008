@@ -1,0 +1,16 @@
+// ********************************************************************************************************************
+Newton Game Dynamic wrapper release 0.03
+
+This is the first release of the Newton Game Dynamics wrapper for Game Maker.
+-Rigid bodies
+-Convex hull collision shapes
+-Collision tree collision shapes(static only)
+-Collision notification
+-Materials
+
+
+Enjoy
+Samuel Hanson
+
+
+

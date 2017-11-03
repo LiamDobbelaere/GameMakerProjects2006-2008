@@ -1,0 +1,4 @@
+Chat commands:
+//showme serverstat. - shows the server status
+QSTAT  - When warning, shows the warning
+Setmax (num) - Set maximal players to number or type into num : infinite , for infinite players

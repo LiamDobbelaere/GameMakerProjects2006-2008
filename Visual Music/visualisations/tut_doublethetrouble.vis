@@ -1,0 +1,104 @@
+//This one has 2 effects merged onto one
+//the first s the specturum from center to top and bottom
+//the second is the wave from ceter to left and right
+//set colors
+CommandListAdd (SetDataColors,c_red, c_red, c_red, c_red);
+//set color rotation
+CommandListAdd (SetLeftSpectrumColorSwitch, 5, c_blue, c_maroon, c_aqua, c_lime, c_red);
+CommandListAdd (SetRightSpectrumColorSwitch, 6, c_aqua, c_navy, c_lime, c_red, c_blue,c_maroon);
+CommandListAdd (SetRightWaveColorSwitch, 6, c_blue, c_aqua, c_navy, c_lime, c_maroon, c_red);
+CommandListAdd (SetLeftWaveColorSwitch, 5, c_aqua, c_navy, c_lime, c_red, c_blue);
+//set alpha
+CommandListAdd (SetDataAlphas,.5, .5, 1, 1);
+//make the surface
+CommandListAdd (MakeSurf0,512,512,c_black);
+CommandListAdd (MakeSurf1,512,512,c_black);
+CommandListAdd (MakeSurf2,512,512,c_black);
+
+
+//First effect, the spectrum
+CommandListAdd (DrawOnSurf1);
+
+
+//transform start, will draw from center of surface
+CommandListAdd (TransformStart);
+//set to center
+CommandListAdd (TransformSetXY,256,256);
+
+//Draw a pair from center pointing up 
+CommandListAdd (DrawLeftSpectrumWithSettings, 0, -1, -256,-68)
+CommandListAdd (DrawLeftSpectrumWithSettings,  0, -1, 256,-68)
+//same for left from center pointing down
+CommandListAdd (DrawRightSpectrumWithSettings, 0, 1, 256,68)
+CommandListAdd (DrawRightSpectrumWithSettings,  0, 1, -256,68)
+
+//done with transform
+CommandListAdd (TransformEnd);
+
+//fade
+CommandListAdd (SetBlendSubtract);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,make_color_rgb(5,5,5),1);
+CommandListAdd (SetBlendNormal);
+
+//this cancels any alpha transfered to the surface
+CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,c_black,1);
+CommandListAdd (SetBlendNormal);
+
+
+//Draw the surface onto itself copy area onto larger one for grow effect
+CommandListAdd (DrawSurface1,0,0,512,512,0,-12,512,524,c_white,1);
+
+
+//Next effect, the waves
+CommandListAdd (DrawOnSurf2);
+
+
+//transform start, will draw from center of surface
+CommandListAdd (TransformStart);
+//rotate 90 degrees
+CommandListAdd (TransformRotate,90,0);
+//set to center
+CommandListAdd (TransformSetXY,256,256);
+
+//Draw a pair from center to edge with 
+CommandListAdd (DrawLeftWaveWithSettings, -256, -1, 256,-68)
+//same for left
+CommandListAdd (DrawRightWaveWithSettings, -256, 1, 256,68)
+
+//done with transform
+CommandListAdd (TransformEnd);
+
+//fade
+//CommandListAdd (SetBlendSubtract);
+//CommandListAdd (DrawRectColorAlpha,0,0,512,512,make_color_rgb(5,5,5),1);
+//CommandListAdd (SetBlendNormal);
+
+//this cancels any alpha transfered to the surface
+CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,c_black,1);
+CommandListAdd (SetBlendNormal);
+
+
+//Draw the surface onto itself copy area onto larger one for grow effect
+CommandListAdd (DrawSurface2,0,0,512,512,-4,0,516,512,c_white,1);
+
+
+
+//now copy to surf0 
+CommandListAdd (DrawOnSurf0);
+//the spectrum effect
+CommandListAdd (DrawSurface1,0,0,512,512,0,0,512,512,c_white,1);
+//the wave effect with add mode
+CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawSurface2,0,0,512,512,0,0,512,512,c_white,1);
+CommandListAdd (SetBlendNormal);
+
+//this cancels any alpha transfered to the surface
+CommandListAdd (SetBlendAdd);
+CommandListAdd (DrawRectColorAlpha,0,0,512,512,c_black,1);
+CommandListAdd (SetBlendNormal);
+
+//draw on screen
+CommandListAdd (DrawOnScreen);
+CommandListAdd (DrawSurface0,0,0,512,512,0,0,800,512,c_white,1);

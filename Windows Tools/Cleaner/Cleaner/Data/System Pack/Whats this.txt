@@ -1,0 +1,8 @@
+This is a map with 1 file.
+What file? All your system files that are cleaned now.
+Use Reset.exe to reset all the files with this file.
+In this file are all the CFG's you cleaned.
+So let's say that this is an back up.
+You can delete it.
+Or you can use it to reset the file you cleaned.
+Easy isn't it?
